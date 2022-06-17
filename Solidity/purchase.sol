@@ -126,7 +126,7 @@ contract Purchase {
     function completePurchase() 
         external 
         inState(State.Locked) 
-        condition((msg.sender == buyer) || (block.timestamp > _deployBlockTimestamp + 5 minutes)) 
+        condition((msg.sender == buyer) || (block.timestamp >= _deployBlockTimestamp + 5 minutes)) 
     {
         _deployBlockTimestamp = block.timestamp;
         emit ItemReceived();
