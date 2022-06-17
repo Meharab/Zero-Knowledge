@@ -23,3 +23,13 @@ In this example I'll demonstrate, how to deploy Ethereum smart contract using Ri
 * **Step 5:** Collect the hash and look it up on etherscan to be confirmed if the transaction was successful or not. if not goto **step 4** and try again.
 
 # 6. Write an escrowing smart contract for value transfer in a trade.
+find the answer in following folders:
+* [Code](https://github.com/Meharab/Zero-Knowledge/tree/main/Solidity)
+* [Screenshots](https://github.com/Meharab/Zero-Knowledge/tree/main/Screenshots)
+
+# 7. Is the new design better than having separate `confirmReceived` and `refundSeller`? Why or why not?
+The conditions of new design is a vulnerable to attack because of the `modifier`. The condition requires 
+
+# 8. Comprehend a simple `Hello World` circuit.
+find the answer in following folder:
+* [Screenshots]([https://github.com/Meharab/Zero-Knowledge/tree/main/Screenshots](https://github.com/Meharab/Zero-Knowledge/blob/main/Screenshots/question-8-zkrepl-dev-circom.png))
