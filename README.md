@@ -32,4 +32,4 @@ The conditions of new design is a vulnerable to attack because of the `modifier`
 
 # 8. Comprehend a simple `Hello World` circuit.
 find the answer in following folder:
-* [Screenshots]([https://github.com/Meharab/Zero-Knowledge/tree/main/Screenshots](https://github.com/Meharab/Zero-Knowledge/blob/main/Screenshots/question-8-zkrepl-dev-circom.png))
+* [Screenshots](https://github.com/Meharab/Zero-Knowledge/blob/main/Screenshots/question-8-zkrepl-dev-circom.png))
