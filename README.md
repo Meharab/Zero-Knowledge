@@ -15,7 +15,7 @@ Optimizing smart contracts may reduce gas consumption and therefore the associat
 Instead of giving him the actual number I can give him the range of mumber where the actual number is associated so that if he knows the actual number he can verify my answer. e.g. if the tree has 23 leaves and I give him the range 20-25, if he actually knows the answer then he would know that I am telling the truth.
 
 # 5. How are smart contracts deployed? List the necessary steps.
-In this example I'll demonstrate, how to deploy Ethereum smart contract using Rimix IDE.
+In the following section, I'll demonstrate, how to deploy Ethereum smart contract using Rimix IDE.
 * **Step 1:** Create a new file with the extension of **".sol"** in Remix and write the smart contract into that file.
 * **Step 2:** Inject the web3 wallet so that you can sign the transaction using your private key.
 * **Step 3:** select the right network where the smart contract will deploy.
