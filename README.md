@@ -28,7 +28,7 @@ find the answer in following folders:
 * [Screenshots](https://github.com/Meharab/Zero-Knowledge/tree/main/Screenshots)
 
 # 7. Is the new design better than having separate `confirmReceived` and `refundSeller`? Why or why not?
-The conditions of new design is a vulnerable to attack because of the `modifier`. The condition requires 
+The conditions of new design is a vulnerable to attack because of the `State modifier` has to be `LOCKED`. So, in case of buyer's condition we cannot update the state otherwise the seller can't access the function. So, if buyer wants he can attack the contract by calling the `completePurchase` over and over until the contract has no `wei/ether` in it. So, the new design is not better than having separate `confirmReceived` and `refundSeller`.
 
 # 8. Comprehend a simple `Hello World` circuit.
 find the answer in following folder:
