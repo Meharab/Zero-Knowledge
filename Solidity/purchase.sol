@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.4;
 contract Purchase {
-    uint public _deployBlockTimestamp;
+    uint public deployTime;
+    uint public buyerTime;
     uint public value;
     address payable public seller;
     address payable public buyer;
@@ -52,7 +53,7 @@ contract Purchase {
     // Division will truncate if it is an odd number.
     // Check via multiplication that it wasn't an odd number.
     constructor() payable {
-        _deployBlockTimestamp = block.timestamp;
+        deployTime = block.timestamp;
         seller = payable(msg.sender);
         value = msg.value / 2;
         if ((2 * value) != msg.value)
@@ -89,6 +90,7 @@ contract Purchase {
         emit PurchaseConfirmed();
         buyer = payable(msg.sender);
         state = State.Locked;
+        buyerTime = block.timestamp;
     }
 
     /// Confirm that you (the buyer) received the item.
@@ -126,14 +128,18 @@ contract Purchase {
     function completePurchase() 
         external 
         inState(State.Locked) 
-        condition((msg.sender == buyer) || (block.timestamp >= _deployBlockTimestamp + 5 minutes)) 
+        condition((msg.sender == buyer) || (block.timestamp >= (buyerTime + 5 minutes))) 
     {
-        _deployBlockTimestamp = block.timestamp;
-        emit ItemReceived();
-        state = State.Release;
-        buyer.transfer(value);
-        emit SellerRefunded();
-        state = State.Inactive;
-        seller.transfer(3 * value);
+        if (msg.sender == buyer) {
+            emit ItemReceived();
+            buyer.transfer(value);
+        }
+
+        if (msg.sender == seller) {
+            state = State.Release;
+            emit SellerRefunded();
+            state = State.Inactive;
+            seller.transfer(3 * value);
+        }
     }
 }
